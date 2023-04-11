@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules/bootswatch/dist/slate/bootstrap.min.css"/>
-    <script src="app.js"></script>
     <title>Issue Tracker App</title>
 </head>
 <body>
@@ -18,64 +17,54 @@
 <!-- New Item Card With Button-->
     <main class="container-fluid">
         <div class="card my-4 p-4">
-            <h2 class="mt-2">Add New Item</h2>
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#newItemModal">
-            Add New Item!
-        </button>
-        </div>
-
-<!-- Modal with form inside Starts Here-->
-        <div class="modal" id="newItemModal">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">New Item!</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true"></span>
-                        </button>
+            <h2 class="mt-2">Add New Issue</h2>
+            <div>
+                <form>
+                    <div class="mb-3">
+                        <label for="issueReported" class="form-label">Issue Reported</label>
+                        <textarea class="form-control" id="issueReported" rows="3"></textarea>
                     </div>
-                    <div class="modal-body">
-                        <p>INSERT FORM HERE!!!!!.</p>
+                    <div class="mb-3">
+                        <label for="assetName" class="form-label">Asset Name</label>
+                        <input type="text" class="form-control" id="assetName">
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-success" id="newItemButton">Add Item</button>
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <div class="mb-3">
+                        <label for="reportedDate" class="form-label">Reported Date</label>
+                        <input type="date" class="form-control" id="reportedDate">
                     </div>
-                </div>
+                    <div class="mb-3">
+                        <label for="reportedBy" class="form-label">Reported By</label>
+                        <input type="text" class="form-control" id="reportedBy">
+                    </div>
+                </form>
+                <button type="submit" class="btn btn-success" id="newIssueBtn">Add Issue</button>
             </div>
         </div>
 
+
+
 <!-- Table Start -->
         <div class="card p-4">
-            <table class="table table-dark table-striped">
+            <table class="table table-dark table-striped" id="issueTable">
                 <thead>
                     <tr>
-                        <th>Column1</th>
-                        <th>2</th>
-                        <th>3</th>
+                        <th>Issue Reported</th>
+                        <th>Asset Name</th>
+                        <th>Reported Date</th>
+                        <th>Reported By</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
-            <tbody class="table-group-divider">
-                
-
+            <tbody class="table-group-divider"> 
 
             </table>
         </div>
-
-
-
-
-
-
-    
     </main>
-    
 
 
 
-
-
+    <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

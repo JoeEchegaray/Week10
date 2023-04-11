@@ -4,10 +4,10 @@ let id = 0;
  // console.log("Button is working!")
 //});
 
-console.log('JS Showing Up?')
+//console.log('JS Showing Up?')
 
 document.getElementById("newIssueBtn").addEventListener('click', () => {
-    console.log("testing");
+    //console.log("testing");
     let table = document.getElementById('issueTable');
     let row = table.insertRow(1);
     row.setAttribute('id', `item-${id}`);
